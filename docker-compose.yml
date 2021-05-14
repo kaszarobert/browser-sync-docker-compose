@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  bs:
+    image: ustwo/browser-sync
+    command: start --proxy "http://localhost" --files "css/*.css" --autoOpen FALSE
+    volumes:
+      - ./:/source
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    network_mode: "bridge"
